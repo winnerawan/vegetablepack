@@ -41,6 +41,7 @@
     <link href="{{ asset("admin/vendors/bower_components/jsgrid/dist/jsgrid-theme.min.css") }}" rel="stylesheet" type="text/css"/>
     <!-- Custom CSS -->
     <link href="{{ asset("admin/dist/css/style.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset("admin/dist/css/additional.css") }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>

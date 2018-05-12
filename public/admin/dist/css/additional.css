@@ -1,0 +1,17 @@
+.wrapper.box-layout{
+    width: 100%;
+    max-width: unset;
+}
+.wrapper.box-layout .navbar-fixed-top{
+    width: 100%;
+    max-width: unset;
+}
+.preloader-it{
+    height: auto !important;
+    z-index: 20000 !important;    
+}
+.preloader-it .la-anim-1.la-animate{
+    z-index: 20000 !important;
+    background: #fff !important;
+    display: none;
+}
