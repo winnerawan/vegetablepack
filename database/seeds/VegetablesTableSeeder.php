@@ -11,7 +11,7 @@ class VegetablesTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Vegetable::insert(
+        \App\Vegetable::insert([
             [
                 'store_id' => 1,
                 'name' => 'Brokoli',
@@ -113,6 +113,6 @@ class VegetablesTableSeeder extends Seeder
                 'is_available' => 1,
                 'created_at' => \Carbon\Carbon::now('Asia/Jakarta')
             ]
-        );
+        ]);
     }
 }

@@ -11,7 +11,7 @@ class StoresTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Store::insert(
+        \App\Store::insert([
             [
                 'merchant_id' => 1,
                 'village_id' => 5,
@@ -72,6 +72,6 @@ class StoresTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => \Carbon\Carbon::now('Asia/Jakarta')
             ]
-        );
+        ]);
     }
 }

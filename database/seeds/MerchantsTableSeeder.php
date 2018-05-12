@@ -11,7 +11,7 @@ class MerchantsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Merchant::insert(
+        \App\Merchant::insert([
             [
                 'name' => 'Agus',
                 'email' => 'agus@gmail.com',
@@ -36,6 +36,6 @@ class MerchantsTableSeeder extends Seeder
                 'password' => bcrypt('painem'),
                 'created_at' => \Carbon\Carbon::now('Asia/Jakarta')
             ]
-        );
+        ]);
     }
 }
