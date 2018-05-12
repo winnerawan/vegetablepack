@@ -25,15 +25,20 @@
     <!-- bootstrap-select CSS -->
     <link href="{{ asset("admin/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css") }}"
           rel="stylesheet" type="text/css"/>
-
+    <link rel="stylesheet" href="{{ asset("admin/vendors/bower_components/jquery.steps/demo/css/jquery.steps.css") }}">
     <!-- Bootstrap Switches CSS -->
     <link href="{{ asset("admin/vendors/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css") }}"
           rel="stylesheet" type="text/css"/>
-
+    <link rel="stylesheet" href="{{ asset("admin/vendors/bower_components/jquery.steps/demo/css/jquery.steps.css") }}">
+    <link href="{{ asset("admin/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css") }}" rel="stylesheet" type="text/css"/>
     <!-- switchery CSS -->
     <link href="{{ asset("admin/vendors/bower_components/switchery/dist/switchery.min.css") }}" rel="stylesheet"
           type="text/css"/>
+    <link href="{{ asset("admin/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css") }}" rel="stylesheet" type="text/css"/>
 
+
+    <link href="{{ asset("admin/vendors/bower_components/jsgrid/dist/jsgrid.min.css") }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset("admin/vendors/bower_components/jsgrid/dist/jsgrid-theme.min.css") }}" rel="stylesheet" type="text/css"/>
     <!-- Custom CSS -->
     <link href="{{ asset("admin/dist/css/style.css") }}" rel="stylesheet" type="text/css">
 </head>
@@ -111,7 +116,34 @@
 <!-- Init JavaScript -->
 <script src="{{ asset("admin/dist/js/init.js") }}"></script>
 <script src="{{ asset("admin/dist/js/ecommerce-data.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/datatables.net-buttons/js/buttons.flash.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/jszip/dist/jszip.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/pdfmake/build/pdfmake.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/pdfmake/build/vfs_fonts.js") }}"></script>
 
+<script src="{{ asset("admin/vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js") }}"></script>
+<script src="{{ asset("admin/dist/js/export-table-data.js") }}"></script>
+<!-- JSgrid table JavaScript -->
+{{--<script src="{{ asset("admin/dist/js/db.js") }}"></script>--}}
+<script src="{{ asset("admin/vendors/bower_components/jsgrid/dist/jsgrid.min.js") }}"></script>
+<script src="{{ asset("admin/dist/js/jsgrid-data.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/switchery/dist/switchery.min.js") }}"></script>
+<script src="{{ asset("admin/vendors/bower_components/jquery.steps/build/jquery.steps.min.js") }}"></script>
+<!-- Fancy Dropdown JS -->
+<script src="{{ asset("admin/dist/js/dropdown-bootstrap-extended.js") }}"></script>
+
+<!-- Starrr JavaScript -->
+<script src="{{ asset("admin/dist/js/starrr.js") }}"></script>
+
+<!-- Product Detail Data JavaScript -->
+<script src="{{ asset("admin/dist/js/product-detail-data.js") }}"></script>
+
+<!-- Slimscroll JavaScript -->
+<script src="{{ asset("admin/dist/js/jquery.slimscroll.js") }}"></script>
 </body>
 
 </html>

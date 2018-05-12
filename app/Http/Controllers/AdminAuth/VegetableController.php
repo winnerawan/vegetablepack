@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
+use App\Store;
 use App\Vegetable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class VegetableController extends Controller
 {
@@ -15,7 +18,8 @@ class VegetableController extends Controller
      */
     public function index()
     {
-        //
+        $vegetables = Vegetable::all();
+        return view('admin.vegetables.index')->with(['vegetables' => $vegetables]);
     }
 
     /**
@@ -25,7 +29,8 @@ class VegetableController extends Controller
      */
     public function create()
     {
-        //
+        $stores = Store::all();
+        return view('admin.vegetables.create')->with(['stores' => $stores]);
     }
 
     /**
@@ -36,7 +41,31 @@ class VegetableController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vegetable = new Vegetable();
+
+        $vegetable->name = $request->name;
+        $vegetable->store_id = $request->store_id;
+        $vegetable->image = $request->image;
+        $vegetable->price = $request->price;
+        $vegetable->description = $request->description;
+        $vegetable->weight = $request->weight;
+        $vegetable->is_available = $request->is_available;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            $location = public_path('/images/'.$filename);
+            Image::make($image)->resize(285, 355)->save($location);
+            $oldFilename = $vegetable->image;
+            $vegetable->image = $filename;
+            Storage::delete($oldFilename);
+        }
+
+        $vegetable->save();
+
+        return redirect()->route('admin.vegetables.index');
+
+
     }
 
     /**
@@ -45,9 +74,10 @@ class VegetableController extends Controller
      * @param  \App\Vegetable  $vegetable
      * @return \Illuminate\Http\Response
      */
-    public function show(Vegetable $vegetable)
+    public function show($id)
     {
-        //
+        $vegetable = Vegetable::find($id);
+        return view('admin.vegetables.show')->with(['vegetable' => $vegetable]);
     }
 
     /**
@@ -56,9 +86,12 @@ class VegetableController extends Controller
      * @param  \App\Vegetable  $vegetable
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vegetable $vegetable)
+    public function edit($id)
     {
-        //
+        $stores = Store::all();
+        $vegetable = Vegetable::find($id);
+
+        return view('admin.vegetables.edit')->with(['stores' => $stores, 'vegetable'=> $vegetable]);
     }
 
     /**

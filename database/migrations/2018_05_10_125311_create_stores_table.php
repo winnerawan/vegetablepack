@@ -16,18 +16,16 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('merchant_id');
-            $table->integer('zone_id');
-            $table->integer('district_id');
             $table->integer('village_id');
-            $table->string('rt');
-            $table->string('rw');
+            $table->string('rt')->nullable();
+            $table->string('rw')->nullable();
             $table->string('name');
-            $table->string('description');
-            $table->string('contact');
-            $table->string('street');
-            $table->string('image');
-            $table->string('open');
-            $table->string('close');
+            $table->longText('description')->nullable();
+            $table->string('contact')->nullable();
+            $table->string('street')->nullable();
+            $table->string('image')->nullable();
+            $table->string('open')->nullable();
+            $table->string('close')->nullable();
             $table->boolean('is_active');
             $table->timestamps();
         });

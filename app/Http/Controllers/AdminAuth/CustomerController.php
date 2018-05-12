@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\AdminAuth;
 
+use App\Customer;
+use App\District;
 use App\Http\Controllers\Controller;
 use App\Merchant;
+use App\Village;
+use App\Zone;
 use Illuminate\Http\Request;
 
-class MerchantController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +19,8 @@ class MerchantController extends Controller
      */
     public function index()
     {
-        $merchants = Merchant::all();
-        return view('admin.merchants.index')->with(['merchants' => $merchants]);
+        $customers = Customer::all();
+        return view('admin.customers.index')->with(['customers'=> $customers]);
     }
 
     /**
@@ -26,8 +30,12 @@ class MerchantController extends Controller
      */
     public function create()
     {
-        return view('admin.merchants.create');
+        $zones = Zone::all();
+        $districts = District::all();
+        $villages = Village::all();
+        return view('admin.customers.create')->with(['villages' => $villages, 'zones' => $zones, 'districts' => $districts]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,13 +45,7 @@ class MerchantController extends Controller
      */
     public function store(Request $request)
     {
-        $merchant = new Merchant();
-        $merchant->name = $request->name;
-        $merchant->email = $request->email;
-        $merchant->password = bcrypt($request->password);
-
-        $merchant->save();
-        return redirect()->route('admin.merchants.index');
+        //
     }
 
     /**

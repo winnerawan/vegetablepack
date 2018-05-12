@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
-use App\Merchant;
 use Illuminate\Http\Request;
 
-class MerchantController extends Controller
+class SaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class MerchantController extends Controller
      */
     public function index()
     {
-        $merchants = Merchant::all();
-        return view('admin.merchants.index')->with(['merchants' => $merchants]);
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class MerchantController extends Controller
      */
     public function create()
     {
-        return view('admin.merchants.create');
+        //
     }
 
     /**
@@ -37,13 +35,7 @@ class MerchantController extends Controller
      */
     public function store(Request $request)
     {
-        $merchant = new Merchant();
-        $merchant->name = $request->name;
-        $merchant->email = $request->email;
-        $merchant->password = bcrypt($request->password);
-
-        $merchant->save();
-        return redirect()->route('admin.merchants.index');
+        //
     }
 
     /**

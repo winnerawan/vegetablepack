@@ -38,4 +38,9 @@ class Merchant extends Authenticatable
     {
         $this->notify(new MerchantResetPassword($token));
     }
+
+    public function store()
+    {
+        return $this->hasMany(Store::class, 'merchant_id');
+    }
 }

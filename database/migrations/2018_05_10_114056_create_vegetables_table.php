@@ -17,10 +17,12 @@ class CreateVegetablesTable extends Migration
             $table->increments('id');
             $table->integer('store_id');
             $table->string('name');
-            $table->string('description');
+            $table->longText('description');
             $table->string('weight');
             $table->string('price');
             $table->string('image');
+            $table->boolean('is_available');
+
             $table->timestamps();
         });
     }

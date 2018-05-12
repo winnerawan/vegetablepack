@@ -14,5 +14,9 @@ class DatabaseSeeder extends Seeder
          $this->call(ZonesTableSeeder::class);
          $this->call(DistrictsTableSeeder::class);
          $this->call(VillagesTableSeeder::class);
+         $this->call(MerchantsTableSeeder::class);
+         $this->call(StoresTableSeeder::class);
+         $this->call(CustomersTableSeeder::class);
+         $this->call(VegetablesTableSeeder::class);
     }
 }

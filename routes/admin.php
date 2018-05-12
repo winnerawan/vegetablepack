@@ -9,6 +9,7 @@ Route::get('/home', function () {
 
     return view('admin.home');
 })->name('home');
-
+Route::resource('vegetables', 'AdminAuth\VegetableController');
 Route::resource('stores', 'AdminAuth\StoreController');
 Route::resource('merchants', 'AdminAuth\MerchantController');
+Route::resource('customers', 'AdminAuth\CustomerController');
