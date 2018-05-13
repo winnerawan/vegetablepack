@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Vegetable;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $vegetables = Vegetable::get();
+        $vegetables = $vegetables->sortByDesc('created_at')->take(4);
+        View::share(['vegetables' => $vegetables]);
     }
 
     /**

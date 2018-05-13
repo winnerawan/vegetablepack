@@ -101,9 +101,31 @@ class VegetableController extends Controller
      * @param  \App\Vegetable  $vegetable
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vegetable $vegetable)
+    public function update(Request $request, $id)
     {
-        //
+        $vegetable = Vegetable::find($id);
+
+        $vegetable->name = $request->input('name');
+        $vegetable->description = $request->input('description');
+        $vegetable->weight = $request->input('weight');
+        $vegetable->price = $request->input('price');
+        $vegetable->is_available = $request->input('is_available');
+
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            $location = public_path('/images/'.$filename);
+            Image::make($image)->resize(800, 400)->save($location);
+            $oldFilename = $vegetable->image;
+            $vegetable->image = $filename;
+            Storage::delete($oldFilename);
+        }
+
+        $vegetable->save();
+
+        return redirect()->route('admin.vegetables.index');
+
     }
 
     /**

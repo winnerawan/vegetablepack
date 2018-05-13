@@ -29,7 +29,7 @@
                         <div class="panel-wrapper collapse in">
                             <div class="panel-body">
                                 <div class="form-wrap">
-                                    {!! Form::model($vegetable, ['route' => ['admin.vegetables.update', $vegetable->id], 'data-parsley-validate' => '', 'files' => true, 'method' => 'PUT  ']) !!}
+                                    {!! Form::model($vegetable, ['route' => ['admin.vegetables.update', $vegetable->id], 'method' => 'PUT', 'data-parsley-validate' => '', 'files' => true]) !!}
                                     {{ csrf_field() }}
                                     <h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-info-outline mr-10"></i>Detail Sayur</h6>
                                     <hr class="light-grey-hr"/>
@@ -126,7 +126,7 @@
 
                                     <div class="form-actions">
                                         <div class="clearfix"></div>
-                                        {{ Form::submit('Create', array('class' => 'btn btn-success left-icon mr-10 pull-left')) }}
+                                        {{ Form::submit('Ubah', array('class' => 'btn btn-success left-icon mr-10 pull-left')) }}
                                         {{--<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>save</span></button>--}}
                                         <button type="button" class="btn btn-warning pull-left">Cancel</button>
                                         <div class="clearfix"></div>

@@ -11,6 +11,11 @@ class Village extends Model
         return $this->hasMany(Store::class, 'village_id');
     }
 
+    public function customer()
+    {
+        return $this->hasMany(Customer::class, 'village_id');
+    }
+
     public function district()
     {
         return $this->belongsTo(District::class, 'district_id');

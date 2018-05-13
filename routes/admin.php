@@ -13,3 +13,4 @@ Route::resource('vegetables', 'AdminAuth\VegetableController');
 Route::resource('stores', 'AdminAuth\StoreController');
 Route::resource('merchants', 'AdminAuth\MerchantController');
 Route::resource('customers', 'AdminAuth\CustomerController');
+Route::resource('taxes', 'AdminAuth\TaxController');

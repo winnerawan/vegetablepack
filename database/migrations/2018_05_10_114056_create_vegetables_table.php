@@ -19,7 +19,7 @@ class CreateVegetablesTable extends Migration
             $table->string('name');
             $table->longText('description');
             $table->string('weight');
-            $table->string('price');
+            $table->decimal('price', 6, 2);
             $table->string('image');
             $table->boolean('is_available');
 

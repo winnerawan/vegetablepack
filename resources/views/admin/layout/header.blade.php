@@ -92,96 +92,61 @@
                             <li class="col-md-3 col-xs-6 col-menu-list">
                                 <a href="javascript:void(0);">
                                     <div class="pull-left"><i class="zmdi zmdi-landscape mr-20"></i><span
-                                                class="right-nav-text">Dashboard</span></div>
+                                                class="right-nav-text">Main</span></div>
                                     <div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div>
                                     <div class="clearfix"></div>
                                 </a>
                                 <hr class="light-grey-hr ma-0"/>
                                 <ul>
                                     <li>
-                                        <a href="index.html">Analytical</a>
+                                        <a href="{{ url('admin/stores') }}">Toko Mitra</a>
                                     </li>
                                     <li>
-                                        <a href="index2.html">Demographic</a>
+                                        <a href="{{ url('admin/merchants') }}">Akun Mitra</a>
                                     </li>
                                     <li>
-                                        <a href="index3.html">Project</a>
+                                        <a href="{{ url('admin/customers') }}">Pelanggan</a>
                                     </li>
                                     <li>
-                                        <a href="index4.html">Hospital</a>
-                                    </li>
-                                    <li>
-                                        <a href="index5.html">HRM</a>
-                                    </li>
-                                    <li>
-                                        <a href="index6.html">Real Estate</a>
-                                    </li>
-                                    <li>
-                                        <a href="profile.html">profile</a>
+                                        <a href="{{ url('admin/sales') }}">Penjualan</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="col-md-3 col-xs-6 col-menu-list">
                                 <a href="javascript:void(0);">
                                     <div class="pull-left">
-                                        <i class="zmdi zmdi-shopping-basket mr-20"></i><span class="right-nav-text">E-Commerce</span>
+                                        <i class="zmdi zmdi-shopping-basket mr-20"></i><span class="right-nav-text">Produk</span>
                                     </div>
-                                    <div class="pull-right"><span class="label label-success">hot</span>
+                                    <div class="pull-right">
                                     </div>
                                     <div class="clearfix"></div>
                                 </a>
                                 <hr class="light-grey-hr ma-0"/>
                                 <ul>
                                     <li>
-                                        <a href="e-commerce.html">Dashboard</a>
+                                        <a href="{{ url('admin/vegetables') }}">Sayur</a>
                                     </li>
                                     <li>
-                                        <a href="product.html">Products</a>
+                                        <a href="{{ url('admin/packets') }}">Paket Sayur</a>
                                     </li>
                                     <li>
-                                        <a href="product-detail.html">Product Detail</a>
-                                    </li>
-                                    <li>
-                                        <a href="add-products.html">Add Product</a>
-                                    </li>
-                                    <li>
-                                        <a href="product-orders.html">Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="product-cart.html">Cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="product-checkout.html">Checkout</a>
+                                        <a href="{{ url('admin/villages') }}">Lokasi</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="col-md-6 col-xs-12 preview-carousel">
                                 <a href="javascript:void(0);">
-                                    <div class="pull-left"><span class="right-nav-text">latest products</span></div>
+                                    <div class="pull-left"><span class="right-nav-text">Sayuran Baru</span></div>
                                     <div class="clearfix"></div>
                                 </a>
                                 <hr class="light-grey-hr ma-0"/>
                                 <div class="product-carousel owl-carousel owl-theme text-center">
-                                    <a href="#">
-                                        <img src="dist/img/chair.jpg" alt="chair">
-                                        <span>Circle chair</span>
-                                    </a>
-                                    <a href="#">
-                                        <img src="dist/img/chair2.jpg" alt="chair">
-                                        <span>square chair</span>
-                                    </a>
-                                    <a href="#">
-                                        <img src="dist/img/chair3.jpg" alt="chair">
-                                        <span>semi circle chair</span>
-                                    </a>
-                                    <a href="#">
-                                        <img src="dist/img/chair4.jpg" alt="chair">
-                                        <span>wooden chair</span>
-                                    </a>
-                                    <a href="#">
-                                        <img src="dist/img/chair2.jpg" alt="chair">
-                                        <span>square chair</span>
-                                    </a>
+                                    @foreach($vegetables as $vegetable)
+                                        <a href="{{ url('admin/vegetables/' . $vegetable->id)  }}">
+                                            <img src="{{ asset('images/' . $vegetable->image) }}" alt="chair">
+                                            <span>{{ $vegetable->name }}</span>
+                                        </a>
+                                    @endforeach
                                 </div>
                             </li>
                         </ul>

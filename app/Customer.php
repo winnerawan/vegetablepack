@@ -38,4 +38,9 @@ class Customer extends Authenticatable
     {
         $this->notify(new CustomerResetPassword($token));
     }
+
+    public function village()
+    {
+        return $this->belongsTo(Village::class, 'village_id');
+    }
 }

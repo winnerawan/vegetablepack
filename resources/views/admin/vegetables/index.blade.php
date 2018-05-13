@@ -37,7 +37,7 @@
                                             <a href="javascript:void(0);" class="font-18 txt-grey pull-left sa-warning"><i class="zmdi zmdi-close"></i></a>
                                         </div>
 
-                                        <a href="{{ url('admin/vegetables/' . $vegetable->id) }}"> <img src="{{ asset('images/' . $vegetable->image) }}" class="img-responsive" alt="Product Image" /> </a>
+                                        <a href="{{ url('admin/vegetables/' . $vegetable->id) }}"> <img src="{{ asset('images/' . $vegetable->image) }}" width="285px" height="200px" alt="Foto Sayur" /> </a>
                                     </div>
                                     <div class="info">
                                         <h6>{{$vegetable->name}}</h6>
